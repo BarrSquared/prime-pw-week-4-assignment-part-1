@@ -16,30 +16,39 @@ console.log('Test - should say "Hello World!"', hello());
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 let name = "Joe";
 function helloName( name ) {
-  return 'Hello, ' + name;
+  return 'Hello, ' + name + "!";
 }
 // Remember to call the function to test
-console.log('Test - should say, "Hello, ' + name +'!"')
+console.log('Test - should say, "Hello, Joe!" Says: ' + helloName(name))
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+let firstNumber = 2;
+let secondNumber = 2;
+function addNumbers(firstNumber, secondNumber) {
+  let sum = firstNumber + secondNumber;
+  return sum;
   // return firstNumber + secondNumber;
 }
-
+console.log('Test - should say, "4" Says: ' + addNumbers(firstNumber, secondNumber));
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+let numT1 = 3;
+let numT2 = 3;
+let numT3 = 3;
+function multiplyThree(num1, num2, num3){
+  let product = num1 * num2 * num3;
+  return product;
 }
-
+console.log('Test - should say "27" Says: ' + multiplyThree(numT1, numT2, numT3));
 
 // 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
+  } else {
+    return false;
   }
-    return;
 }
 // Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
@@ -50,16 +59,26 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
+let testArray = [0, 1, 2, 3]
 function getLast( array ) {
-
+  return array[array.length-1];
 }
+console.log('Test - should say "3" Says: ' + getLast(testArray))
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-function find( value, array ){
-
+let test7Array = [0, 1, 2, 3, 4, 5];
+let test7Value = 4;
+function find(value, array){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === value){
+      return true;
+    }
+  }
+  return false;
 }
+console.log('Test - should say "true" Says: ' + find(test7Value, test7Array));
 
 // ----------------------
 // Stretch Goals
