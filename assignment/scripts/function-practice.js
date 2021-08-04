@@ -106,9 +106,38 @@ console.log('Test - Should say, "4" Says: ' + sumAll(testArray9));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
+let testArray10 = [1, 0, 1, 1]
+function posRtn (array) {
+  let posArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      posArray.push(array[i]);
+    }
+  }
+  return posArray;
+}
+console.log('Test - Should say, "1,1,1" Says: ' + posRtn(testArray10));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+// Add up the Numbers from a Single Number
+// This function will take in a number, then sum all the numbers preceding it from 1 to itself
+//Example: 4 is 1 + 2 + 3 + 4 = 10
+
+let exNum = 5;
+function singleNumSum ( num ) {
+  let arr = [];
+  let sum = 0;
+  for ( let i = 0; i < num + 1; i++){
+    arr.push(i);
+  }
+  for ( let i = 0; i < arr.length; i++){
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+console.log('Test - should say, "15" Says: ' + singleNumSum(exNum));
+console.log('Test - should say, "10" Says: ' + singleNumSum(4));
+console.log('Test - should say, "91" Says: ' + singleNumSum(13));
